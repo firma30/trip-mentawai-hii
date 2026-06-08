@@ -1356,7 +1356,25 @@ body {
     z-index: 1;
 }
 
+@media (max-width: 1024px) {
+    .video-wrap {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .video-wrap {
+        max-width: 100%;
+    }
+}
+
 @media (max-width: 768px) {
+    .video-wrap {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
     .video-wrap {
         max-width: 100%;
     }
