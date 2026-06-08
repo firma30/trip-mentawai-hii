@@ -10,6 +10,7 @@ window.addEventListener("scroll", () => {
 // ── Mobile menu toggle ──
 function toggleMenu() {
   document.getElementById("mobileMenu").classList.toggle("open");
+  document.getElementById("hamburger").classList.toggle("hidden");
 }
 
 // ── Reveal on scroll (IntersectionObserver) ──
@@ -141,3 +142,17 @@ function kirimWA() {
 
     window.open('https://wa.me/6281374140787?text=' + encodeURIComponent(teks), '_blank');
 }
+
+// ── Floating buttons hilang saat scroll ──
+const floatingBtns = document.querySelector('.floating-btns');
+let scrollTimer = null;
+
+window.addEventListener('scroll', () => {
+    floatingBtns.style.opacity = '0';
+    floatingBtns.style.pointerEvents = 'none';
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => {
+        floatingBtns.style.opacity = '1';
+        floatingBtns.style.pointerEvents = 'auto';
+    }, 1000);
+});
