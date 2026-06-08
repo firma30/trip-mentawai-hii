@@ -117,3 +117,10 @@ function toggleAcc(btn) {
 
     startAuto();
 })();
+
+// ── Why Card toggle ──
+function toggleWhyCard(card) {
+    const isOpen = card.classList.contains('open');
+    document.querySelectorAll('.why-card').forEach(c => c.classList.remove('open'));
+    if (!isOpen) card.classList.add('open');
+}

@@ -1452,6 +1452,40 @@ body {
     border-radius: 4px;
 }
 
+/* ── Why Card: click to reveal ── */
+.why-card {
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.why-card .why-desc {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.3s ease;
+    margin-top: 0;
+}
+
+.why-card.open .why-desc {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 12px;
+}
+
+.why-hint {
+    font-size: 0.78rem;
+    color: var(--sea-light);
+    margin-top: 6px;
+    transition: opacity 0.3s;
+}
+
+.why-card.open .why-hint {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
 @media (max-width: 768px) {
     .testi-nav { width: 36px; height: 36px; }
     .testi-nav svg { width: 14px; height: 14px; }
@@ -1785,6 +1819,36 @@ body {
     color: rgba(255, 255, 255, 0.6);
     margin-bottom: 8px;
     font-weight: 500;
+}
+
+/* ── Fix: Form Select Styling ── */
+.form-select {
+    width: 100%;
+    padding: 13px 16px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: var(--white);
+    font-family: var(--ff-body);
+    font-size: 0.92rem;
+    outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.5)' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 16px;
+    cursor: pointer;
+}
+
+.form-select:focus {
+    border-color: var(--sea);
+}
+
+.form-select option {
+    background: #1D6B7A;
+    color: var(--white);
 }
 
 .form-input,
