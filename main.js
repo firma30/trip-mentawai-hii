@@ -124,3 +124,20 @@ function toggleWhyCard(card) {
     document.querySelectorAll('.why-card').forEach(c => c.classList.remove('open'));
     if (!isOpen) card.classList.add('open');
 }
+
+// ── Contact Form → WhatsApp ──
+function kirimWA() {
+    const nama  = document.getElementById('contactNama').value.trim();
+    const wa    = document.getElementById('contactWA').value.trim();
+    const paket = document.getElementById('contactPaket').value;
+    const pesan = document.getElementById('contactPesan').value.trim();
+
+    if (!nama || !wa) {
+        alert('Mohon isi Nama dan Nomor WhatsApp terlebih dahulu.');
+        return;
+    }
+
+    const teks = `Halo Kak Putra 👋\n\nSaya ingin bertanya tentang Trip Mentawai Hopping Islands.\n\n*Nama:* ${nama}\n*No. WA:* ${wa}\n*Paket:* ${paket}\n*Pesan:* ${pesan || '-'}`;
+
+    window.open('https://wa.me/6281374140787?text=' + encodeURIComponent(teks), '_blank');
+}
