@@ -1601,7 +1601,7 @@ body.modal-open {
 }
 
 .why-card.open .why-desc {
-    max-height: 600px;
+    max-height: 1000px;
     opacity: 1;
     margin-top: 18px;
 }
@@ -1859,39 +1859,6 @@ body.modal-open {
     border-radius: 4px;
 }
 
-/* ── Why Card: click to reveal ── */
-.why-card {
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.why-card .why-desc {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.3s ease;
-    margin-top: 0;
-}
-
-.why-card.open .why-desc {
-    max-height: 200px;
-    opacity: 1;
-    margin-top: 12px;
-}
-
-.why-hint {
-    font-size: 0.78rem;
-    color: var(--sea-light);
-    margin-top: 6px;
-    transition: opacity 0.3s;
-}
-
-.why-card.open .why-hint {
-    opacity: 0;
-    height: 0;
-    margin: 0;
-    overflow: hidden;
-}
 
 @media (max-width: 768px) {
     .testi-nav { width: 36px; height: 36px; }
