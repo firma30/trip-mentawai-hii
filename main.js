@@ -156,3 +156,243 @@ window.addEventListener('scroll', () => {
         floatingBtns.style.pointerEvents = 'auto';
     }, 1000);
 });
+
+// ═══════════════════════════════════════════════════
+//  DESTINATION GALLERY SYSTEM
+// ═══════════════════════════════════════════════════
+
+const DESTINATIONS = [
+    {
+        id: 'mangrove',
+        name: '🌿 Hutan Mangrove',
+        tag: 'Alam',
+        desc: 'Jelajahi ekosistem bakau yang rimbun',
+        cover: 'assets/mangrove/cover.jpg',
+        photos: [
+            'assets/mangrove/cover.jpg',
+        ]
+    },
+    {
+        id: 'awera',
+        name: '🏖️ Pantai Awera',
+        tag: 'Pantai',
+        desc: 'Pasir putih dan ombak yang tenang',
+        cover: 'assets/pantai awera/IMG_3567.PNG',
+        photos: [
+            'assets/pantai awera/IMG_3567.PNG',
+            'assets/pantai awera/IMG_3568.PNG',
+        ]
+    },
+    {
+        id: 'tanjung-simakakang',
+        name: '🌊 Tanjung Simakakang',
+        tag: 'Tanjung',
+        desc: 'Pemandangan tanjung yang spektakuler',
+        cover: 'assets/simakakang/IMG_3570.PNG',
+        photos: [
+            'assets/simakakang/IMG_3570.PNG',
+            'assets/simakakang/IMG_3571.PNG',
+            'assets/simakakang/IMG_3572.PNG',
+            'assets/simakakang/IMG_3573.PNG',
+        ]
+    },
+    {
+        id: 'pulau-simakakang',
+        name: '🏝️ Pulau Simakakang',
+        tag: 'Pulau',
+        desc: 'Snorkeling spot terbaik di Mentawai',
+        cover: 'assets/simakakang/IMG_3571.PNG',
+        photos: [
+            'assets/simakakang/IMG_3571.PNG',
+            'assets/simakakang/IMG_3572.PNG',
+            'assets/simakakang/IMG_3573.PNG',
+        ]
+    },
+    {
+        id: 'manggobai',
+        name: '🌀 Teluk Manggobai',
+        tag: 'Teluk',
+        desc: 'Teluk tersembunyi dengan air tenang',
+        cover: 'assets/manggobai/cover.jpg',
+        photos: ['assets/manggobai/cover.jpg']
+    },
+    {
+        id: 'siburu',
+        name: '⛵ Pulau Siburu',
+        tag: 'Pulau',
+        desc: 'Pulau kecil nan romantis',
+        cover: 'assets/siburu/cover.jpg',
+        photos: ['assets/siburu/cover.jpg']
+    },
+    {
+        id: 'putotoga',
+        name: '🌺 Pulau Putotoga',
+        tag: 'Pulau',
+        desc: 'Keindahan alami yang belum banyak diketahui',
+        cover: 'assets/PULAU PUTOTOGA/cover.jpg',
+        photos: ['assets/PULAU PUTOTOGA/cover.jpg']
+    },
+    {
+        id: 'spongebob',
+        name: '🧽 Spongebob Island',
+        tag: 'Viral',
+        desc: 'Spot foto terpopuler di Mentawai',
+        cover: 'assets/spongebob island/IMG_3558.PNG',
+        photos: [
+            'assets/spongebob island/IMG_3558.PNG',
+            'assets/spongebob island/IMG_3559.PNG',
+            'assets/spongebob island/IMG_3560.PNG',
+            'assets/spongebob island/IMG_3561.PNG',
+            'assets/spongebob island/IMG_3562.PNG',
+            'assets/spongebob island/IMG_3563.PNG',
+        ]
+    },
+    {
+        id: 'mapadegat',
+        name: '🌴 Pantai Mapadegat',
+        tag: 'Pantai',
+        desc: 'Desa wisata dengan budaya lokal',
+        cover: 'assets/mapadegat/cover.jpg',
+        photos: ['assets/mapadegat/cover.jpg']
+    },
+    {
+        id: 'jati-km0',
+        name: '🌊 Pantai Jati KM 0',
+        tag: 'Pantai',
+        desc: 'Titik nol petualangan Mentawai',
+        cover: 'assets/jati km0/cover.jpg',
+        photos: ['assets/jati km0/cover.jpg']
+    },
+];
+
+// ── Render Cards ──────────────────────────────────
+(function renderDestCards() {
+    const grid = document.getElementById('destGrid');
+    if (!grid) return;
+
+    DESTINATIONS.forEach((dest, i) => {
+        const delay = (i * 0.05).toFixed(2);
+        const card = document.createElement('div');
+        card.className = 'dest-card reveal';
+        card.style.transitionDelay = delay + 's';
+        card.setAttribute('data-dest-id', dest.id);
+
+        card.innerHTML = `
+            <div class="dest-card-bg" style="background-image:url('${dest.cover}')"></div>
+            <div class="dest-card-overlay"></div>
+            <div class="dest-card-hover">
+                <span class="dest-hover-label">
+                    <i class="fa-regular fa-images"></i> Lihat Galeri
+                </span>
+            </div>
+            <div class="dest-card-body">
+                <span class="dest-card-tag">${dest.tag}</span>
+                <div class="dest-card-name">${dest.name}</div>
+                <div class="dest-card-meta">
+                    <i class="fa-solid fa-camera"></i>
+                    ${dest.photos.length} Foto
+                </div>
+            </div>
+        `;
+
+        card.addEventListener('click', () => openGallery(dest.id));
+        grid.appendChild(card);
+    });
+
+    // Re-observe new cards for reveal animation
+    const newCards = grid.querySelectorAll('.reveal');
+    newCards.forEach(el => revealObserver.observe(el));
+})();
+
+// ── Gallery Modal ─────────────────────────────────
+let gmCurrentDest = null;
+let gmCurrentIndex = 0;
+let gmTouchStartX = 0;
+
+const galleryModal = document.getElementById('galleryModal');
+const gmPhoto      = document.getElementById('gmPhoto');
+const gmDestName   = document.getElementById('gmDestName');
+const gmPhotoCount = document.getElementById('gmPhotoCount');
+const gmPhotoIndex = document.getElementById('gmPhotoIndex');
+const gmThumbs     = document.getElementById('gmThumbs');
+
+function openGallery(destId) {
+    const dest = DESTINATIONS.find(d => d.id === destId);
+    if (!dest) return;
+
+    gmCurrentDest  = dest;
+    gmCurrentIndex = 0;
+
+    gmDestName.textContent   = dest.name;
+    gmPhotoCount.textContent = dest.photos.length + ' Foto';
+
+    // Render thumbs
+    gmThumbs.innerHTML = '';
+    dest.photos.forEach((src, i) => {
+        const t = document.createElement('div');
+        t.className = 'gm-thumb' + (i === 0 ? ' active' : '');
+        t.innerHTML = `<img src="${src}" alt="Foto ${i+1}" loading="lazy">`;
+        t.addEventListener('click', () => setGmPhoto(i));
+        gmThumbs.appendChild(t);
+    });
+
+    setGmPhoto(0);
+    galleryModal.classList.add('open');
+    document.body.classList.add('modal-open');
+}
+
+function closeGallery() {
+    galleryModal.classList.remove('open');
+    document.body.classList.remove('modal-open');
+    gmCurrentDest = null;
+}
+
+function setGmPhoto(index) {
+    if (!gmCurrentDest) return;
+    const photos = gmCurrentDest.photos;
+    gmCurrentIndex = (index + photos.length) % photos.length;
+
+    gmPhoto.classList.add('loading');
+    const img = new Image();
+    img.onload = () => {
+        gmPhoto.src = photos[gmCurrentIndex];
+        gmPhoto.classList.remove('loading');
+    };
+    img.src = photos[gmCurrentIndex];
+
+    gmPhotoIndex.textContent = (gmCurrentIndex + 1) + ' / ' + photos.length;
+
+    // Update thumbs
+    gmThumbs.querySelectorAll('.gm-thumb').forEach((t, i) => {
+        t.classList.toggle('active', i === gmCurrentIndex);
+    });
+
+    // Scroll active thumb into view
+    const activeThumb = gmThumbs.querySelector('.gm-thumb.active');
+    if (activeThumb) activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+}
+
+// Events
+document.getElementById('gmClose').addEventListener('click', closeGallery);
+document.getElementById('gmBack').addEventListener('click', closeGallery);
+document.getElementById('gmBackdrop').addEventListener('click', closeGallery);
+document.getElementById('gmPrev').addEventListener('click', () => setGmPhoto(gmCurrentIndex - 1));
+document.getElementById('gmNext').addEventListener('click', () => setGmPhoto(gmCurrentIndex + 1));
+
+// Keyboard
+document.addEventListener('keydown', (e) => {
+    if (!galleryModal.classList.contains('open')) return;
+    if (e.key === 'Escape')      closeGallery();
+    if (e.key === 'ArrowRight')  setGmPhoto(gmCurrentIndex + 1);
+    if (e.key === 'ArrowLeft')   setGmPhoto(gmCurrentIndex - 1);
+});
+
+// Swipe mobile
+const gmPhotoWrap = document.querySelector('.gm-photo-wrap');
+gmPhotoWrap.addEventListener('touchstart', e => {
+    gmTouchStartX = e.touches[0].clientX;
+}, { passive: true });
+gmPhotoWrap.addEventListener('touchend', e => {
+    const diff = gmTouchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) diff > 0 ? setGmPhoto(gmCurrentIndex + 1) : setGmPhoto(gmCurrentIndex - 1);
+}, { passive: true });
