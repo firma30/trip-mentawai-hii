@@ -168,9 +168,16 @@ const DESTINATIONS = [
         name: '🌿 Hutan Mangrove',
         tag: 'Alam',
         desc: 'Jelajahi ekosistem bakau yang rimbun',
-        cover: 'assets/mangrove/cover.jpg',
+        cover: 'assets/MANGROVE/img_3486.JPG.jpeg',
         photos: [
-            'assets/mangrove/cover.jpg',
+            'assets/MANGROVE/img_3486.JPG.jpeg',
+            'assets/MANGROVE/img_3487.JPG.jpeg',
+            'assets/MANGROVE/img_3488.JPG.jpeg',
+            'assets/MANGROVE/img_3490.JPG.jpeg',
+            'assets/MANGROVE/img_3496.JPG.jpeg',
+            'assets/MANGROVE/img_3500.JPG.jpeg',
+            'assets/MANGROVE/img_3507.JPG.jpeg',
+            'assets/MANGROVE/img_3513.JPG.jpeg',
         ]
     },
     {
@@ -189,12 +196,21 @@ const DESTINATIONS = [
         name: '🌊 Tanjung Simakakang',
         tag: 'Tanjung',
         desc: 'Pemandangan tanjung yang spektakuler',
-        cover: 'assets/simakakang/IMG_3570.PNG',
+        cover: 'assets/TANJUNG SIMAKAKANG/IMG_2083.PNG',
         photos: [
-            'assets/simakakang/IMG_3570.PNG',
-            'assets/simakakang/IMG_3571.PNG',
-            'assets/simakakang/IMG_3572.PNG',
-            'assets/simakakang/IMG_3573.PNG',
+            'assets/TANJUNG SIMAKAKANG/IMG_3587.PNG',
+            'assets/TANJUNG SIMAKAKANG/IMG_3587.PNG',
+            'assets/TANJUNG SIMAKAKANG/IMG_3588.PNG',
+            'assets/TANJUNG SIMAKAKANG/IMG_3589.PNG',
+            'assets/TANJUNG SIMAKAKANG/IMG_3591.PNG',
+            'assets/TANJUNG SIMAKAKANG/IMG_3592.PNG',
+            'assets/TANJUNG SIMAKAKANG/IMG_3593.PNG',
+            'assets/TANJUNG SIMAKAKANG/IMG_3594.PNG',
+            'assets/TANJUNG SIMAKAKANG/IMG_3595.PNG',
+            'assets/TANJUNG SIMAKAKANG/IMG_3596.PNG',
+            'assets/TANJUNG SIMAKAKANG/IMG_3597.PNG',
+            'assets/TANJUNG SIMAKAKANG/IMG_3598.PNG',
+
         ]
     },
     {
@@ -204,34 +220,48 @@ const DESTINATIONS = [
         desc: 'Snorkeling spot terbaik di Mentawai',
         cover: 'assets/simakakang/IMG_3571.PNG',
         photos: [
+            'assets/simakakang/IMG_3570.PNG',
             'assets/simakakang/IMG_3571.PNG',
             'assets/simakakang/IMG_3572.PNG',
             'assets/simakakang/IMG_3573.PNG',
         ]
     },
     {
-        id: 'manggobai',
-        name: '🌀 Teluk Manggobai',
-        tag: 'Teluk',
-        desc: 'Teluk tersembunyi dengan air tenang',
-        cover: 'assets/manggobai/cover.jpg',
-        photos: ['assets/manggobai/cover.jpg']
-    },
-    {
         id: 'siburu',
         name: '⛵ Pulau Siburu',
         tag: 'Pulau',
         desc: 'Pulau kecil nan romantis',
-        cover: 'assets/siburu/cover.jpg',
-        photos: ['assets/siburu/cover.jpg']
+        cover: 'assets/SIBURU/IMG_3569.PNG',
+        photos: [
+            'assets/SIBURU/IMG_3569.PNG',
+            'assets/SIBURU/IMG_3599.PNG',
+            'assets/SIBURU/IMG_3600.PNG',
+        ]
     },
     {
         id: 'putotoga',
         name: '🌺 Pulau Putotoga',
         tag: 'Pulau',
         desc: 'Keindahan alami yang belum banyak diketahui',
-        cover: 'assets/PULAU PUTOTOGA/cover.jpg',
-        photos: ['assets/PULAU PUTOTOGA/cover.jpg']
+        cover: 'assets/PULAU PUTOTOGA/IMG_3396.JPG.jpeg',
+        photos: ['assets/PULAU PUTOTOGA/IMG_3396.JPG.jpeg',
+            'assets/PULAU PUTOTOGA/IMG_3396.JPG.jpeg',
+            'assets/PULAU PUTOTOGA/IMG_3401.JPG.jpeg',
+            'assets/PULAU PUTOTOGA/IMG_3409.JPG.jpeg',
+            'assets/PULAU PUTOTOGA/IMG_3414.JPG.jpeg',
+            'assets/PULAU PUTOTOGA/IMG_3415.JPG.jpeg',
+            'assets/PULAU PUTOTOGA/IMG_3416.JPG.jpeg',
+            'assets/PULAU PUTOTOGA/IMG_3418.JPG.jpeg',
+            'assets/PULAU PUTOTOGA/IMG_3419.JPG.jpeg',
+            'assets/PULAU PUTOTOGA/IMG_3433.JPG.jpeg',
+            'assets/PULAU PUTOTOGA/IMG_3439.JPG.jpeg',
+            'assets/PULAU PUTOTOGA/IMG_3550.PNG',
+            'assets/PULAU PUTOTOGA/IMG_3551.PNG',
+            'assets/PULAU PUTOTOGA/IMG_3552.PNG',
+            'assets/PULAU PUTOTOGA/IMG_3554.PNG',
+            'assets/PULAU PUTOTOGA/IMG_3555.PNG',
+
+        ]
     },
     {
         id: 'spongebob',
@@ -249,20 +279,14 @@ const DESTINATIONS = [
         ]
     },
     {
-        id: 'mapadegat',
-        name: '🌴 Pantai Mapadegat',
-        tag: 'Pantai',
-        desc: 'Desa wisata dengan budaya lokal',
-        cover: 'assets/mapadegat/cover.jpg',
-        photos: ['assets/mapadegat/cover.jpg']
-    },
-    {
         id: 'jati-km0',
         name: '🌊 Pantai Jati KM 0',
         tag: 'Pantai',
         desc: 'Titik nol petualangan Mentawai',
-        cover: 'assets/jati km0/cover.jpg',
-        photos: ['assets/jati km0/cover.jpg']
+        cover: 'assets/PANTAI JATI/IMG_3586.PNG',
+        photos: ['assets/PANTAI JATI/IMG_3586.PNG',
+            'assets/PANTAI JATI/IMG_3590.PNG',
+        ]
     },
 ];
 
