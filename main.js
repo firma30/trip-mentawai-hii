@@ -199,9 +199,7 @@ const DESTINATIONS = [
         cover: 'assets/TANJUNG SIMAKAKANG/IMG_2083.PNG',
         photos: [
             'assets/TANJUNG SIMAKAKANG/IMG_2083.PNG',
-            'assets/TANJUNG SIMAKAKANG/IMG_3587.PNG',
             'assets/TANJUNG SIMAKAKANG/IMG_3589.PNG',
-            'assets/TANJUNG SIMAKAKANG/IMG_3591.PNG',
             'assets/TANJUNG SIMAKAKANG/IMG_3592.PNG',
             'assets/TANJUNG SIMAKAKANG/IMG_3593.PNG',
             'assets/TANJUNG SIMAKAKANG/IMG_3594.PNG',
@@ -285,6 +283,9 @@ const DESTINATIONS = [
         cover: 'assets/PANTAI JATI/IMG_3586.PNG',
         photos: ['assets/PANTAI JATI/IMG_3586.PNG',
             'assets/PANTAI JATI/IMG_3590.PNG',
+            'assets/TANJUNG SIMAKAKANG/IMG_3591.PNG',
+            'assets/TANJUNG SIMAKAKANG/IMG_3587.PNG',
+            'assets/TANJUNG SIMAKAKANG/IMG_3588.PNG',
         ]
     },
 ];
