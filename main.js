@@ -198,9 +198,8 @@ const DESTINATIONS = [
         desc: 'Pemandangan tanjung yang spektakuler',
         cover: 'assets/TANJUNG SIMAKAKANG/IMG_2083.PNG',
         photos: [
+            'assets/TANJUNG SIMAKAKANG/IMG_2083.PNG',
             'assets/TANJUNG SIMAKAKANG/IMG_3587.PNG',
-            'assets/TANJUNG SIMAKAKANG/IMG_3587.PNG',
-            'assets/TANJUNG SIMAKAKANG/IMG_3588.PNG',
             'assets/TANJUNG SIMAKAKANG/IMG_3589.PNG',
             'assets/TANJUNG SIMAKAKANG/IMG_3591.PNG',
             'assets/TANJUNG SIMAKAKANG/IMG_3592.PNG',
@@ -244,7 +243,7 @@ const DESTINATIONS = [
         tag: 'Pulau',
         desc: 'Keindahan alami yang belum banyak diketahui',
         cover: 'assets/PULAU PUTOTOGA/IMG_3396.JPG.jpeg',
-        photos: ['assets/PULAU PUTOTOGA/IMG_3396.JPG.jpeg',
+        photos: [
             'assets/PULAU PUTOTOGA/IMG_3396.JPG.jpeg',
             'assets/PULAU PUTOTOGA/IMG_3401.JPG.jpeg',
             'assets/PULAU PUTOTOGA/IMG_3409.JPG.jpeg',
